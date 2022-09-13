@@ -1,0 +1,73 @@
+# steps followed in creation of this webapp along with git integration
+create a folder and navigate to the created folder and then in cmd do the following
+
+    python -m venv env
+    env/scripts/activate to activate the virutal environment
+    django-admin startproject immodel_project
+    pip install django django-heroku numpy matplotlib gunicorn psycopg2 pillow
+    python manage.py startapp IMModel_app
+
+
+### GIT initialization
+in cmd 
+
+    git --version
+    git config --global user.name "rash335"
+    git config --global user.email "rash335@gmail.com" or
+    git config --global --edit
+
+--edit will take you to vim editor (git bash). set all the required things and hit escape twice to exit from insert mode in the git VIM editor. then type :qa! to exit from the git bash editor
+
+in cmd: 
+
+    git init
+    git status (to show untracked files)
+    git add (filenames) or git add .
+    git status (to show all the unstaged files that are in staging area because of add . command)
+    git log (to see the logs till now)
+    git commit -m 'message about changes preferably'
+    git log (to see all the commits)
+    git checkout 0b61b3dca3a385bd00a47130b348d2b2bfcb338f (initial commit id to go the initial stage where IMmodel.py file wasn't added)
+    git checkout master (to go back to the last stage where the updated files were there)
+    
+    git checkout 0b61b3dca3a385bd00a47130b348d2b2bfcb338f (do it again)
+    git branch (to see which branch we are currently in)
+
+with git branch, we will see two branches one is HEAD and the other is master. HEAD is the current branch (marked with *) that denotes that we are currently having the files related to this checkout. then git checkout master will take us to the updated files
+
+create a new branch using 
+    
+    git branch branchname
+    git branch (to view branches)
+    git checkout branchname (to navigate to new branch)
+    git checkout -b branchname (combines above two steps)
+
+
+to ignore some files which are to be ignored from git: create a new file named .gitignore (or type touch .gitignore in cmd)
+inside the gitignore file, add those filenames which are to be hidden from git
+
+
+initialize git remote by 
+
+    git remote -v
+    git remote add origin https://github.com/rash335/imModel.git
+    git branch -M master
+    git push -u origin master (push the project contents on to github)
+    git remote set-url origin https://github.com/rash335/IMModel (to change git remote to another project/repository on github)
+
+origin is the name given to the process
+
+once pushing onto github is done, thereafter, any changes in the files or project can be updated just by 
+
+    git add . 
+    git commit -m 'version changes'
+    git push
+
+this will by default push to the master branch 
+
+if we want to push to another branch, then 
+
+    git checkout branchname 
+    git push -u origin branchname
+
+this will create new branch with branchname in github repository and the respective files in this branch will be pushed
