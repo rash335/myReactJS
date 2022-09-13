@@ -22,7 +22,7 @@ in cmd:
 
     git init
     git status (to show untracked files)
-    git add (filenames) or git add .
+    git add (filenames) or git add for staging process.
     git status (to show all the unstaged files that are in staging area because of add . command)
     git log (to see the logs till now)
     git commit -m 'message about changes preferably'
